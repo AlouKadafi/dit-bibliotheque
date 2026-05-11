@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dit_bibliotheque_db
+    environment:
+      POSTGRES_USER: dit_user
+      POSTGRES_PASSWORD: dit_password
+      POSTGRES_DB: dit_bibliotheque
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:

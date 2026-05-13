@@ -12,5 +12,37 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  books-service:
+    build: ./backend/books-service
+    container_name: books_service
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
+
+  users-service:
+    build: ./backend/users-service
+    container_name: users_service
+    ports:
+      - "3002:3002"
+    depends_on:
+      - postgres
+
+  loans-service:
+    build: ./backend/loans-service
+    container_name: loans_service
+    ports:
+      - "3003:3003"
+    depends_on:
+      - postgres
+
+  recommendation-service:
+    build: ./backend/recommendation-service-python
+    container_name: recommendation_service
+    ports:
+      - "3004:3004"
+    depends_on:
+      - postgres
+
 volumes:
   postgres_data:

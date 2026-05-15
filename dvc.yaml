@@ -4,7 +4,7 @@ stages:
     cmd: python dvc-pipeline/preprocess.py
     deps:
       - dvc-pipeline/preprocess.py
-      - dvc-pipeline/data/loans.csv
+      - dvc-pipeline/data/loans.json
     outs:
       - dvc-pipeline/data/loans_clean.csv
 
@@ -28,7 +28,6 @@ stages:
     deps:
       - dvc-pipeline/evaluate.py
       - dvc-pipeline/models/model.pkl
-      - dvc-pipeline/data/loans_clean.csv
     metrics:
       - metrics/metrics.json:
           cache: false

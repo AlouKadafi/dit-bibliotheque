@@ -3,34 +3,34 @@ stages:
   preprocess:
     cmd: python dvc-pipeline/preprocess.py
     deps:
-    - path: dvc-pipeline/data/loans.csv
+    - path: dvc-pipeline/data/loans.json
       hash: md5
-      md5: 6eb9c94fb5d670f6b463f161ecb6d07e
-      size: 1041
+      md5: 760634e3b49ad11f5f390e1f2f72927e
+      size: 357
     - path: dvc-pipeline/preprocess.py
       hash: md5
-      md5: 78ade463d400dc22e6df559bc352f3b6
-      size: 2613
+      md5: 2363252b20114e5cdfc60e6bbdb550c8
+      size: 948
     outs:
     - path: dvc-pipeline/data/loans_clean.csv
       hash: md5
-      md5: 09039774090cb79c5116f5a0a657306c
-      size: 1107
+      md5: 128268ffcf0a6ee6861891d9a67c777b
+      size: 91
   train:
     cmd: python dvc-pipeline/train.py
     deps:
     - path: dvc-pipeline/data/loans_clean.csv
       hash: md5
-      md5: 09039774090cb79c5116f5a0a657306c
-      size: 1107
+      md5: 128268ffcf0a6ee6861891d9a67c777b
+      size: 91
     - path: dvc-pipeline/params.yaml
       hash: md5
-      md5: 368c8ec4e1ec282bd02549a31a741a42
-      size: 70
+      md5: 029877ed50f0ee879707e2f218940203
+      size: 73
     - path: dvc-pipeline/train.py
       hash: md5
-      md5: faf93f2cc16bbba48043c8f7a934bf8f
-      size: 1564
+      md5: 8e840d75a52b1b9a2b1444a1645dbf09
+      size: 561
     params:
       dvc-pipeline/params.yaml:
         train.lr_all: 0.01
@@ -40,25 +40,21 @@ stages:
     outs:
     - path: dvc-pipeline/models/model.pkl
       hash: md5
-      md5: f1d07db2cc36e55a6d878e0b7c39a732
-      size: 12323
+      md5: d747c4e5e0a17a105872e46d121b4723
+      size: 40
   evaluate:
     cmd: python dvc-pipeline/evaluate.py
     deps:
-    - path: dvc-pipeline/data/loans_clean.csv
-      hash: md5
-      md5: 09039774090cb79c5116f5a0a657306c
-      size: 1107
     - path: dvc-pipeline/evaluate.py
       hash: md5
-      md5: e464bc118de212ed5e34f946a6327f5e
-      size: 2798
+      md5: b6c0a2d5a2772787dc301c34676a8934
+      size: 504
     - path: dvc-pipeline/models/model.pkl
       hash: md5
-      md5: f1d07db2cc36e55a6d878e0b7c39a732
-      size: 12323
+      md5: d747c4e5e0a17a105872e46d121b4723
+      size: 40
     outs:
     - path: metrics/metrics.json
       hash: md5
-      md5: b3447f3585ba09024612e1fadc8cb924
-      size: 117
+      md5: e2778c9b36ed3f1342afa587460a0b66
+      size: 52

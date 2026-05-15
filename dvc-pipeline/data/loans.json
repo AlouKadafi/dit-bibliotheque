@@ -1,0 +1,13 @@
+﻿{
+    "count":  1,
+    "data":  [
+                 {
+                     "id":  1,
+                     "user_id":  1,
+                     "book_id":  1,
+                     "loan_date":  "2026-05-15T16:42:25.906Z",
+                     "return_date":  null,
+                     "status":  "borrowed"
+                 }
+             ]
+}

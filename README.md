@@ -40,17 +40,21 @@
 ---
 
 ## Vue d'ensemble
+## Vue d'ensemble
 
-La **Bibliothèque Numérique DIT** est une plateforme complète de gestion de bibliothèque universitaire construite sur une architecture **microservices**. Elle offre :
+La **Bibliothèque Numérique DIT** est une plateforme de gestion de bibliothèque universitaire construite sur une architecture microservices.
 
-- Catalogue de **150+ livres** techniques (IA, Data Science, DevOps, etc.)
-- Gestion des **utilisateurs** avec authentification JWT
-- Système d'**emprunts** avec calcul automatique des pénalités
-- **Recommandations personnalisées** par algorithme SVD (Machine Learning)
-- **Tableau de bord** gestionnaire avec KPIs en temps réel
-- **Pipeline ML** versionné avec DVC
-- **CI/CD** automatisé avec Jenkins
+Elle offre actuellement :
 
+- Gestion des livres
+- Gestion des utilisateurs
+- Gestion des emprunts
+- Communication inter-services REST
+- Frontend moderne HTML/CSS/JavaScript
+- Recommandations de livres via FastAPI
+- Pipeline Machine Learning versionné avec DVC
+- Déploiement Docker Compose
+- Base de données PostgreSQL 16
 ---
 
 ## Architecture microservices
@@ -886,7 +890,7 @@ statut    VARCHAR CHECK IN         UNIQUE(utilisateur_id, livre_id)
 | **Abdoul G. DIALLO** | Frontend |
 | **M. DIAKITE** | DVC pipeline |
 | **Seydou KABORE** | README · Docker Compose |
-| **M. KANE** | Backend / intégration |
+| **M. Alassane KANE** | Backend / intégration |
 
 ---
 

@@ -890,7 +890,7 @@ statut    VARCHAR CHECK IN         UNIQUE(utilisateur_id, livre_id)
 | **Abdoul G. DIALLO** | Frontend |
 | **M. DIAKITE** | DVC pipeline |
 | **Seydou KABORE** | README · Docker Compose |
-| **M. Alassane KANE** | Backend / intégration |
+| **Alassane KANE** | Backend / intégration |
 
 ---
 
